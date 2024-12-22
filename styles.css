@@ -1,0 +1,77 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/landscape.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 2em;
+    text-align: center;
+}
+
+footer {
+    background: #333 url('images/server-room.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-section {
+    background: url('images/company-office.jpg') no-repeat center center/cover;
+    background-size: contain;
+    padding: 2em;
+    color: white;
+    text-align: center;
+}
+
+.contact-section {
+    background: url('images/contact-bg.jpg') no-repeat center center/cover;
+    background-size: cover;
+    padding: 2em;
+    color: white;
+    text-align: center;
+}
