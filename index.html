@@ -15,13 +15,18 @@
 </header>
 
 <nav>
-    <a href="index.html#home"><i class="fas fa-home"></i> 首页</a>
-    <a href="about.html#about"><i class="fas fa-info-circle"></i> 关于我们</a>
-    <a href="contact.html#contact"><i class="fas fa-envelope"></i> 联系我们</a>
-    <a href="product.html#product"><i class="fas fa-server"></i> 产品介绍</a>
+    <a href="#home" class="active"><i class="fas fa-home"></i> 首页</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> 关于我们</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> 联系我们</a>
+    <a href="#product"><i class="fas fa-server"></i> 产品介绍</a>
 </nav>
 
 <main>
+    <section id="home">
+        <h2>欢迎来到雨中IT</h2>
+        <p>我们是一家致力于提供优质服务和技术支持的公司。自成立以来，我们一直秉承着创新、诚信、专业的原则，为客户提供全方位的解决方案。</p>
+    </section>
+
     <section id="about" class="about-section">
         <h2>关于我们</h2>
         <p>我们是一家致力于提供优质服务和技术支持的公司。自成立以来，我们一直秉承着创新、诚信、专业的原则，为客户提供全方位的解决方案。</p>
@@ -34,12 +39,70 @@
             <li>电话: 156 0127 0503</li>
             <li>邮箱: pubic@yzit7.wecom.work</li>
         </ul>
+        <div class="form-container">
+            <form id="contactForm">
+                <input type="text" id="name" name="name" placeholder="您的姓名" required>
+                <input type="email" id="email" name="email" placeholder="您的邮箱" required>
+                <textarea id="message" name="message" placeholder="您的消息" required></textarea>
+                <button type="submit">发送</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="product" class="product-section">
+        <h2>产品介绍</h2>
+        <p>我们的产品包括但不限于：</p>
+        <ul>
+            <li>
+                PCDN:去中心化解决方案
+                我们的去中心化解决方案旨在打破传统集中式系统的限制，提供更加安全、透明和高效的网络环境。
+                
+                分布式账本技术（DLT）确保数据不可篡改
+                智能合约自动执行协议，减少人为干预
+                多节点验证机制提高系统可靠性
+                服务器舒适使用
+                我们致力于优化服务器性能，提升用户体验，确保服务器在高负载情况下依然稳定运行。
+                </li>
+            <li>
+                LinuxServer:自动化运维工具简化管理流程
+                实时监控和预警系统保障服务连续性
+                高效冷却系统降低能耗，延长硬件寿命
+            </li>
+        </ul>
     </section>
 </main>
 
 <footer>
     <p>版权所有 &copy; 2024 雨中IT. 保留所有权利.</p>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+
+        // 显示首页内容
+        document.getElementById('home').style.display = 'block';
+
+        // 表单提交处理
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感谢您的联系，我们将尽快回复您！');
+            this.reset();
+        });
+    });
+</script>
 
 </body>
 </html>
